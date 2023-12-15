@@ -1,6 +1,6 @@
 # tf-modules
 This is a functional AWS Beanstalk Terraform module. When used it will create a Beanstalk application and an asociated environment.
-It was developed using Terraform v1.6.5 and tflint v0.49.0
+It was developed using Terraform v1.6.5 and tflint v0.49.0 and github flow.
 
 ## How To Use
 
