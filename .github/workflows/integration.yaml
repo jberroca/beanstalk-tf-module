@@ -40,6 +40,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       name: Checkout source code
+      ## Node 20 is necesary for hashicorp/setup-terraform@v3
     - uses: actions/setup-node@v4
       with:
         node-version: 20
