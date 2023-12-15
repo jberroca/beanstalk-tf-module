@@ -1,0 +1,35 @@
+## If you were to run IaC in a CI/CD pipeline this is a rough sketch of what it would look like
+
+### As I dont have cloud in which to apply this changes some of these steps they will be commented 
+name: tf-apply
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+    branches:
+      - main
+
+jobs:
+  tf-apply:
+    runs-on: [ubuntu-latest]
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+    #- name: Configure AWS credentials
+     # uses: aws-actions/configure-aws-credentials@v1
+     # with:
+       # aws-region: us-east-1
+    - uses: actions/checkout@v3
+      name: Checkout source code
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - uses: hashicorp/setup-terraform@v3
+    - name: run terraform apply & publish changes
+      run: |
+          terraform show
+          echo 'terraform apply -auto-approve'
