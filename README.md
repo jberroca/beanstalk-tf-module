@@ -23,7 +23,7 @@ Asuming there is already an existing VPC you can use the files already present i
 I recommend using terraform.tfvars and variables to initialize the module this way you dont need to declare the variables each time you use `terraform apply` and you have better chance on keeping your variable values secret.
 
 
-## Initialize Provider with a supported version
+1. Initialize Provider with a supported version
 
 ```
 # providers.tf
@@ -41,7 +41,7 @@ provider "aws" {
   region = var.aws-region
 }
 ```
-
+2. Create the needed resources to deploy an application with EBS.
 ```
 # main.tf
 ##To fully deploy an app with EBS you need to host the code somewhere, in this example S3 is used to do this.
@@ -77,7 +77,7 @@ resource "aws_elastic_beanstalk_application_version" "bice_ebs_version" {
 ## Rest of the code ...
 
 ```
-
+3. Set variables for your terraform root module.
 ```
 # variables.tf
 
@@ -103,7 +103,7 @@ variable "bice_solution_stack_name" {
 }
 ### more variables ...
 ```
-
+4. Set the value of the previously created variables in a .tfvars file
 ```
 # example_terraform.tfvars
 
