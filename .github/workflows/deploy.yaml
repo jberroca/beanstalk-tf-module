@@ -30,7 +30,7 @@ jobs:
         node-version: 20
     - uses: hashicorp/setup-terraform@v3
       with:
-      terraform_version: "1.6.5"
+        terraform_version: "1.6.5"
     - name: run terraform apply & publish changes
       run: |
           terraform show
