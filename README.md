@@ -20,7 +20,7 @@ After declaration, this module will give as output the arn of the aforementioned
 ### Example
 Asuming there is already an existing VPC you can use the files already present in the root directory or use the example in this readme.
 
-I recommend using terraform.tfvars and variables to initialize the module this way you dont need to declare the variables each time you use `terraform apply` and you have better chance on keeping your variable values secret.
+Regardless of the example you use, you also need a valid AWS cloud profile. I also recommend using terraform.tfvars and variables to initialize the module, this way you dont need to declare the variables each time you use `terraform apply` and you have better chance on keeping your variable values secret.
 
 
 1. Initialize Provider with a supported version
