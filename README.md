@@ -1,28 +1,31 @@
 # tf-modules
-This is a functional AWS Beanstalk Terraform module. Every time it is used it will create a Beanstalk application and an asociated environment.
+This is a functional AWS Beanstalk Terraform module. When used it will create a Beanstalk application and an asociated environment.
 
 
 ## How To Use
 
 ### Inputs
 This module take the following inputs:
-- "bice_vpc_id": "VPC ID where the Elastic Beanstalk application will be deployed."
+- "bice_vpc_id": VPC ID where the Elastic Beanstalk application will be deployed.
 
 
-- "bice_name_application": "Name of the Elastic Beanstalk application."
+- "bice_name_application": Name of the Elastic Beanstalk application.
 
-- "bice_environment": "Name for the Elastic Beanstalk environment."
-- "bice_solution_stack_name": "Beanstalk environment stack."
+- "bice_environment": Name for the Elastic Beanstalk environment.
+- "bice_solution_stack_name": Beanstalk environment stack.
 
 ### Output
 After declaration, this module will give as output the arn of the aforementioned beanstalk application and beanstalk environment.
 
 ### Mode Of Use
-Asuming there is already an existing VPC you can follow the following example.
-I recommend using terraform.tfvars and variables to initialize the module this way you dont need to repeat yourself and you have better chance on keeping your variable values secret.
+Asuming there is already an existing VPC you can use the main.tf and variables.tf example or use the following one.
+I recommend using terraform.tfvars and variables to initialize the module this way you dont need to declare the variables each time you use 'terraform apply' and you have better chance on keeping your variable values secret.
 
 
 ## Initialize Provider with a supported version
+
+```
+# providers.tf
 terraform {
   required_version = "~>2.0"
   required_providers {
@@ -32,8 +35,6 @@ terraform {
     }
   }
 }
-```
-# providers.tf
 # Configure the AWS Provider with the right region
 provider "aws" {
   region = "us-east-1"
@@ -91,3 +92,9 @@ bice_vpc_id              = "vpc-01234567890abcdef"
 ### more variables ...
 ```
 
+After creating all the files you need to run the following commands to apply the changes to the infrastructure:
+1.- 'terraform init' to initialize the provider and modules.
+2.- 'terraform validate' to check the configuration.
+3.- 'tflint' to run a linter for your IaC.
+4.- 'terraform plan' to show the proposed plan.
+5.- 'terraform apply' to apply the changes
