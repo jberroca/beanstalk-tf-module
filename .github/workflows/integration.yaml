@@ -1,4 +1,4 @@
-name: Run integration test
+name: CI
 
 on: [push, pull_request]
 jobs:
@@ -31,6 +31,7 @@ jobs:
       run: tflint -f compact
 
   tf-validate:
+    needs: tflint
     runs-on: ${{ matrix.os }}
 
     strategy:
