@@ -32,15 +32,15 @@ terraform {
     }
   }
 }
-´´´
+```
 # providers.tf
 # Configure the AWS Provider with the right region
 provider "aws" {
   region = "us-east-1"
 }
-´´´
+```
 
-´´´
+```
 # main.tf
 
 # Initialize the module
@@ -53,9 +53,9 @@ module "bice_beanstalk_module" {
 }
 ## Rest of the code ...
 
-´´´
+```
 
-´´´
+```
 # variables.tf
 
 
@@ -79,9 +79,9 @@ variable "bice_solution_stack_name" {
   description = "Beanstalk environment stack."
 }
 ### more variables ...
-´´´
+```
 
-´´´
+```
 # example_terraform.tfvars
 
 bice_environment         = "bice-vida-environment"
@@ -89,5 +89,5 @@ bice_name_application    = "bice-vida-beanstalk-application"
 bice_solution_stack_name = "64bit Amazon Linux 2023 v4.0.1 running Go 1"
 bice_vpc_id              = "vpc-01234567890abcdef"
 ### more variables ...
-´´´
+```
 
