@@ -20,6 +20,8 @@ module "bice_beanstalk_module" {
   bice_solution_stack_name = var.bice_solution_stack_name
   bice_vpc_id              = var.bice_vpc_id
 }
+
+##The elastic beanstalk module could be modified to take the s3 as an input and then this resource could also be created inside the module.
 resource "aws_elastic_beanstalk_application_version" "bice_ebs_version" {
   name        = "${var.bice_name_application}-version"
   application = var.bice_name_application

@@ -1,4 +1,4 @@
-output "Beanstalk_application_arn" {
+output "beanstalk_application_arn" {
   value = aws_elastic_beanstalk_application.bice_beanstalk_application.arn
   description = "Created Elastic Beanstalk application arn"
 
