@@ -93,8 +93,8 @@ bice_vpc_id              = "vpc-01234567890abcdef"
 ```
 
 After creating all the files you need to run the following commands to apply the changes to the infrastructure:
-1.- 'terraform init' to initialize the provider and modules.
-2.- 'terraform validate' to check the configuration.
-3.- 'tflint' to run a linter for your IaC.
+1.- 'tflint' to run a linter for your IaC.
+2.- 'terraform init' to initialize the provider and modules.
+3.- 'terraform validate' to check the configuration.
 4.- 'terraform plan' to show the proposed plan.
 5.- 'terraform apply' to apply the changes
